@@ -1,0 +1,83 @@
+
+.campaign {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background: peachpuff;
+}
+
+.campaign img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.campaign-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 35%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    border-radius: 10px;
+    line-height: 1.5;
+    font-size: 30px
+}
+
+.campaign-text p:nth-child(2) {
+    font-size: 20px
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 20px;
+    padding: 70px 0;
+    margin: 0 1vw;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    background-color: #fff;
+    width: 360px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.product img {
+    width: 360px;
+    height: 480px;
+}
+
+.color-blocks {
+    display: flex;
+    margin: 10px 0;
+}
+
+.color-block {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+.product-name {
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 4px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 4px;
+    color: #888;
+    text-align: left;
+}
+
+

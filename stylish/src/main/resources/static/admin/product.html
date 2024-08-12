@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product add</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<h1>Product add page</h1>
+<form id="product_form">
+    <label for="category">Category:</label>
+    <p><input type="text" id="category" name="category"/></p>
+    <label for="title">title:</label>
+    <p><input type="text" id="title" name="title"/></p>
+    <label for="description">description:</label>
+    <p><input type="text" id="description" name="description"/></p>
+    <label for="price">price</label>
+    <p><input type="text" id="price" name="price"/></p>
+    <label for="texture">texture</label>
+    <p><input type="text" id="texture" name="texture"/></p>
+    <label for="wash">wash</label>
+    <p><input type="text" id="wash" name="wash"/></p>
+    <label for="place">place</label>
+    <p><input type="text" id="place" name="place"/></p>
+    <label for="note">note</label>
+    <p><input type="text" id="note" name="note"/></p>
+    <label for="story">story</label>
+    <p><input type="text" id="story" name="story"/></p>
+
+    <div id="color_div">
+        <p id="color_paragraph">Color</p>
+        <button id="add_color">add more</button>
+        <table id="color_table">
+            <thead>
+            <tr>
+                <th>color_code</th>
+                <th>color_name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="text" id="color_code" name="colors[0].code"/>
+                </td>
+                <td>
+                    <input type="text" id="color_name" name="colors[0].name"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <p id="size_paragraph">Size</p>
+        <button id="add_size">add more</button>
+        <div id="size_div">
+            <div>
+                <label for="size">size_0: </label>
+                <input type="text" id="size" name="sizes[0]"/>
+            </div>
+        </div>
+    </div>
+
+    <div id="variant_div">
+        <p id="variant_paragraph">Variant</p>
+        <button id="add_variant">add more</button>
+        <table id="variant_table">
+            <thead>
+            <tr>
+                <th>color_code</th>
+                <th>size</th>
+                <th>stock</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input
+                            type="text"
+
+                            id="variant_color_code"
+                            name="variants[0].colorCode"
+                    />
+                </td>
+                <td>
+                    <input type="text" id="variant_size" name="variants[0].size"/>
+                </td>
+                <td>
+                    <input type="text" id="variant_stock" name="variants[0].stock"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="main_img_div">
+        <p id="main_img_paragraph">main image</p>
+        <input type="file" id="main_image" name="main_image"/>
+    </div>
+
+    <div id="sub_image_div">
+        <p id="sub_img_paragraph">sub images</p>
+        <input type="file" id="sub_images" name="images" multiple/>
+    </div>
+
+    <input type="submit" value="Submit"/>
+</form>
+<script src="../js/product/createProduct.js"></script>
+</body>
+</html>

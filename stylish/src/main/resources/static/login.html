@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div id="fb-root"></div>
+
+
+<!-- Set the element id for the JSON response -->
+<p id="profile"></p>
+
+<!-- Login form -->
+<div class="login-form">
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <button id="nativeLogin" type="submit">Login</button>
+    <button class="fb-custom-button" onclick="checkLoginState()">Login with Facebook</button>
+    <button class="signup-button" onclick="window.location.href='signup.html'">SignUp</button>
+</div>
+
+<!-- JavaScript to load the Facebook SDK and handle login -->
+<script src="js/login.js"></script>
+</body>
+</html>

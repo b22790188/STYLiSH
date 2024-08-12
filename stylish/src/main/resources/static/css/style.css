@@ -1,0 +1,23 @@
+#color_paragraph, #size_paragraph, #variant_paragraph,
+#add_color, #add_size, #add_variant {
+    display: inline;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#variant_table, #color_table {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+#color_div, #variant_div {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+#size_div div {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}

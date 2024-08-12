@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Order Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+
+<body>
+<div class="container">
+    <form action="/orders/submit" method="POST" enctype="application/json">
+        <fieldset>
+            <legend>Order Details</legend>
+
+            <div class="form-group">
+                <label for="shipping">Shipping</label>
+                <select id="shipping" class="form-control" name="order[shipping]">
+                    <option value="delivery">Delivery</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="payment">Payment</label>
+                <select id="payment" class="form-control" name="order[payment]">
+                    <option value="credit_card">Credit Card</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subtotal">Subtotal</label>
+                <input type="number" class="form-control" id="subtotal" name="order[subtotal]" required>
+            </div>
+
+            <div class="form-group">
+                <label for="freight">Freight</label>
+                <input type="number" class="form-control" id="freight" name="order[freight]" required>
+            </div>
+
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="number" class="form-control" id="total" name="order[total]" required>
+            </div>
+
+            <fieldset>
+                <legend>Recipient Details</legend>
+                <div class="form-group">
+                    <label for="recipient-name">Name</label>
+                    <input type="text" class="form-control" id="recipient-name" name="order[recipient][name]" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-phone">Phone</label>
+                    <input type="tel" class="form-control" id="recipient-phone" name="order[recipient][phone]" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-email">Email</label>
+                    <input type="email" class="form-control" id="recipient-email" name="order[recipient][email]"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-address">Address</label>
+                    <input type="text" class="form-control" id="recipient-address" name="order[recipient][address]"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-time">Preferred Time</label>
+                    <select id="recipient-time" class="form-control" name="order[recipient][time]">
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="anytime">Anytime</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Product List</legend>
+                <div id="product-list">
+                    <!-- Product template -->
+                    <template id="product-template">
+                        <div class="product-item">
+                            <div class="form-group">
+                                <label for="product-id">Product ID</label>
+                                <input type="text" class="form-control" name="order[list][id][]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product-name">Product Name</label>
+                                <input type="text" class="form-control" name="order[list][name][]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product-price">Product Price</label>
+                                <input type="number" class="form-control" name="order[list][price][]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product-color-name">Color Name</label>
+                                <input type="text" class="form-control" name="order[list][color][name][]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product-color-code">Color Code</label>
+                                <input type="text" class="form-control" name="order[list][color][code][]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product-size">Size</label>
+                                <input type="text" class="form-control" name="order[list][size][]" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product-qty">Quantity</label>
+                                <input type="number" class="form-control" name="order[list][qty][]" required>
+                            </div>
+
+                            <button type="button" class="btn btn-danger" onclick="removeProduct(this)">Remove</button>
+                        </div>
+                    </template>
+                </div>
+                <button id="add_product" type="button" class="btn btn-primary" onclick="addProduct()">Add Product
+                </button>
+            </fieldset>
+        </fieldset>
+
+        <button type="submit" class="btn btn-default">Submit Order</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="../js/order.js"></script>
+</body>
+
+</html>
